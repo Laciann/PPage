@@ -15,6 +15,10 @@
             size: 2.1in 3.4in;
         } */
 
+        body{
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+        }
+
         .top h1 {
             display: inline-block;
             position: absolute;
@@ -42,7 +46,7 @@
             display: inline-block;
             position:absolute;
             bottom: 0px;
-            right: 40px;
+            left: 8px;
         }
       }
 
@@ -79,7 +83,7 @@
       
        print.addEventListener("click", function(e){
         e.preventDefault()
-         let inputText = input.value; 
+         let inputText = input.value.toUpperCase(); 
          let inputTextNode = document.createTextNode(inputText);
          let para = document.createElement("p");
          foot.appendChild(para)
