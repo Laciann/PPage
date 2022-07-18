@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css" media="print">
+     @page {     size: auto;   /* auto is the initial value */     
+     margin: 0;  /* this affects the margin in the printer settings */ } 
+     </style>
+    <style>
+        /* @page {
+            size: 2.1in 3.4in;
+        } */
+
+        .top h1 {
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+            margin-left: px;
+            color: cornflowerblue;
+        }
+
+        form {
+            margin-top: 80px;
+        }
+
+        form input {
+            padding-right: 30vw;
+        }
+
+       
+
+        @media print {
+         form{
+            display: none;
+         }
+
+         footer p {
+            display: inline-block;
+            position:absolute;
+            bottom: 0px;
+            right: 40px;
+        }
+      }
+
+
+      @media screen {
+        footer{
+            display: none;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <img src="https://seeklogo.com/images/S/svg-logo-C2C6DE140E-seeklogo.com.png" width="80px">
+        <h1>Acompany</h1>
+    </div>
+
+    <form action="">
+        <label for="name">Name: </label>
+        <input type="text" id="name">
+        <button id="print">Print</button>
+    </form>
+
+    <footer id="foot">
+        <p></p>
+    </footer>
+
+    <script>
+        const print = document.getElementById('print')
+        const save = document.getElementById('save')
+        const foot = document.getElementById('foot')
+        let input = document.getElementById("name");
+      
+       print.addEventListener("click", function(e){
+        e.preventDefault()
+         let inputText = input.value; 
+         let inputTextNode = document.createTextNode(inputText);
+         let para = document.createElement("p");
+         foot.appendChild(para)
+         console.log(inputText);
+         para.appendChild(inputTextNode)
+
+         window.print()
+        });
+    </script>
+</body>
+
+</html>
